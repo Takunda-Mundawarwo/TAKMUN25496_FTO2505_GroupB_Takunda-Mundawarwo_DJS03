@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Loading from "./components/Loading.jsx";
+import Error from "./components/Error.jsx";
 import fetchData from "./data.js";
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
     fetchData(setPodcasts, setIsLoading, setHasError);
   }, []);
 
-  if (isLoading) {
-    return <Loading />;
-  }
+  if (isLoading) return <Loading />;
+
+  if (hasError) return <Error />;
 }
 
 export default App;
