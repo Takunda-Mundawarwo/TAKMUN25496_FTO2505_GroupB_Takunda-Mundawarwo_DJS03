@@ -7,15 +7,24 @@
 export default function fetchData(setPodcasts, setIsLoading, setHasError) {
   fetch("https://podcast-api.netlify.app/")
     .then((response) => {
-      if (!response.ok) throw new Error("Network repsonse failed");
+      if (!response.ok)
+        throw new Error("Network error, please try again later.");
       return response.json();
     })
     .then((data) => {
+      if (
+        data.length === 0 ||
+        data === null ||
+        data === undefined ||
+        data === ""
+      ) {
+        throw new Error("Nothing was found here...");
+      }
       setPodcasts(data);
       setIsLoading(false);
     })
-    .catch(() => {
-      setHasError(true);
+    .catch((error) => {
+      setHasError({ hasError: true, message: error.message });
       setIsLoading(false);
     });
 }

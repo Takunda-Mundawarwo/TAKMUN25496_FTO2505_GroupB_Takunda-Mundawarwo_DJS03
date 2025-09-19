@@ -9,7 +9,7 @@ import PodcastList from "./components/PodcastList.jsx";
 function App() {
   const [podcasts, setPodcasts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
+  const [errorState, setHasError] = useState({ hasError: false, message: "" });
 
   useEffect(() => {
     fetchData(setPodcasts, setIsLoading, setHasError);
@@ -17,7 +17,7 @@ function App() {
 
   if (isLoading) return <Loading />;
 
-  if (hasError) return <Error />;
+  if (errorState.hasError) return <Error message={errorState.message} />;
 
   console.log(podcasts);
   return (

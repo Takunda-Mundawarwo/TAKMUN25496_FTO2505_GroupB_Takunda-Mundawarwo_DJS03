@@ -11,11 +11,18 @@ const errorStyles = {
   alignItems: "center",
 };
 
-export default function Error() {
+/**
+ * A component that alerts the user to an error
+ * @component
+ * @example <caption>Basic Usage</caption>
+ * <Error message="Error Loading data" />
+ * @returns {JSX.Element}
+ */
+export default function Error(props) {
   return (
     <div style={errorStyles}>
       <img src={Logo} alt="Echo Logo" width="46" />
-      <h1>Something went wrong...</h1>
+      <h1>{props.message ? props.message : "Something went wrong..."}</h1>
     </div>
   );
 }
