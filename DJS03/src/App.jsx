@@ -18,6 +18,7 @@ function App() {
 
   if (hasError) return <Error />;
 
+  console.log(podcasts);
   return <Header />;
 }
 

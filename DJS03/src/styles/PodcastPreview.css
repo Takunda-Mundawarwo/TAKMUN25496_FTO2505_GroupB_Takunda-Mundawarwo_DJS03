@@ -1,0 +1,22 @@
+.podcast {
+  margin: 0.75rem;
+  padding: 0.5rem;
+  max-width: 90vw;
+  background-color: var(--white);
+  border-radius: 0.5rem;
+}
+
+.image {
+  width: 100%;
+  margin: auto;
+}
+
+.genres {
+  font-size: 0.75rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 0.5rem;
+}
