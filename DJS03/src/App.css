@@ -29,7 +29,7 @@
   }
 
   body {
-    font-family: Arial, sans-serif;
+    font-family: "Josefin Sans", Arial, sans-serif;
     font-size: 0.75rem;
     color: var(--dark-blue);
     background-color: var(--dark-blue);
@@ -64,4 +64,3 @@
     line-height: 0.9375rem;
   }
 }
-

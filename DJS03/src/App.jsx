@@ -3,6 +3,7 @@ import "./App.css";
 import Loading from "./components/Loading.jsx";
 import Error from "./components/Error.jsx";
 import fetchData from "./data.js";
+import Header from "./components/Header.jsx";
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
@@ -16,6 +17,8 @@ function App() {
   if (isLoading) return <Loading />;
 
   if (hasError) return <Error />;
+
+  return <Header />;
 }
 
 export default App;
