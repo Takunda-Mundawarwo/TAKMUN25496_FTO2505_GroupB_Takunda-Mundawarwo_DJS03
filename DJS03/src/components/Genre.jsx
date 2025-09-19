@@ -1,4 +1,4 @@
-import genres from "../data.js";
+import { genres } from "../data.js";
 
 /**
  * @typedef {Object} GenreProps
@@ -17,7 +17,7 @@ import genres from "../data.js";
  * @returns {JSX.Element} - A list element displaying the genre name
  */
 export default function Genre(props) {
-  const genre = genres.find((genre) => genre.id == props.key);
+  const genre = genres.find((genre) => genre.id == props.id);
   return <li style={genreStyles}>{genre.title}</li>;
 }
 

@@ -1,0 +1,23 @@
+.podcast-list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .podcast-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .podcast-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 1440px) {
+  .podcast-list {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

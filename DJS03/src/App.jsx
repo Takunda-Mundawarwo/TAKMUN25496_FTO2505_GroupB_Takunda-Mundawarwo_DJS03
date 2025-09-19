@@ -4,6 +4,7 @@ import Loading from "./components/Loading.jsx";
 import Error from "./components/Error.jsx";
 import fetchData from "./data.js";
 import Header from "./components/Header.jsx";
+import PodcastList from "./components/PodcastList.jsx";
 
 function App() {
   const [podcasts, setPodcasts] = useState([]);
@@ -19,7 +20,12 @@ function App() {
   if (hasError) return <Error />;
 
   console.log(podcasts);
-  return <Header />;
+  return (
+    <>
+      <Header />
+      <PodcastList data={podcasts} />
+    </>
+  );
 }
 
 export default App;

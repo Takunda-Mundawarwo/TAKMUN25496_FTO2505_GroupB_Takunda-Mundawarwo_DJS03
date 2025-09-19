@@ -2,8 +2,8 @@ import "../styles/PodcastPreview.css";
 import Genre from "./Genre.jsx";
 
 /**
- * @typedef {object} - PodcastProps
- * @prop {number} id
+ * @typedef {object} PodcastProps
+ * @prop {number} key - The podcasts id
  * @prop {string} title
  * @prop {string} image - the cover image URL
  * @prop {number} seasons
@@ -12,19 +12,24 @@ import Genre from "./Genre.jsx";
  */
 
 /**
+ * A component that displays a podcast's overview
+ *
+ * @component
+ * @example <caption>Basic Usage</caption>
+ * <PodcastPreview key={podcast.id} {...podcast} />
  *
  * @param {PodcastProps} props
  * @returns {JSX.Element} - An article element, representing the podcast.
  */
 export default function PodcastPreview(props) {
   const updatedDate = new Date(props.updated);
-  const genres = props.genres.split(",");
+  const genres = props.genres;
 
   return (
     <article className="podcast">
       <img
         src={props.image}
-        alt="{props.title} Cover Image"
+        alt={`${props.title} Cover Image`}
         className="image"
       />
       <h2>{props.title}</h2>
@@ -32,7 +37,9 @@ export default function PodcastPreview(props) {
         {props.seasons} Seasons | Updated: {updatedDate.toDateString()}
       </h4>
       <ul className="genres">
-        genres.map((genre) => <Genre key={genre} />)
+        {genres.map((genre) => (
+          <Genre key={genre} id={genre} />
+        ))}
       </ul>
     </article>
   );
