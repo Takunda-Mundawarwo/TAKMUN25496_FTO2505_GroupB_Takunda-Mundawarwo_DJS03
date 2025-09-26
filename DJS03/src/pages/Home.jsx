@@ -9,15 +9,17 @@ import PodcastList from "../components/PodcastList.jsx";
  * @example <caption>Basic Usage</caption>
  * <Home podcasts={podcasts} />
  *
- * @param {Array<Podcast>} - The complete array of podcasts available
+ * @param {Array<Podcast>} props.podcasts - The complete array of podcasts available
  * @returns {JSX.Element} - The Landing/Home page
  */
-
 export default function Home({ podcasts }) {
   const [searchQuery, setSearchQuery] = useState("");
+  const [genreFilter, setGenreFilter] = useState("All");
 
-  const filteredPodcasts = podcasts.filter((podcast) =>
-    podcast.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredPodcasts = podcasts.filter(
+    (podcast) =>
+      podcast.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      (podcast.genres.includes(Number(genreFilter)) || genreFilter === "All")
   );
 
   return (
@@ -25,6 +27,8 @@ export default function Home({ podcasts }) {
       <Header
         searchQuery={searchQuery}
         setSearchQuery={(e) => setSearchQuery(e.target.value)}
+        genreFilter={genreFilter}
+        setGenreFilter={(e) => setGenreFilter(e.target.value)}
       />
       <PodcastList data={filteredPodcasts} />
     </>

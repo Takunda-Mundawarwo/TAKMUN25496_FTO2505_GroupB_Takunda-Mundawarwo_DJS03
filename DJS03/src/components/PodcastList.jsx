@@ -2,8 +2,17 @@ import "../styles/PodcastList.css";
 import PodcastPreview from "./PodcastPreview.jsx";
 
 /**
+ * @typedef {object} Podcast
+ * @prop {string} title - The podcast title
+ * @prop {string} image - the cover image URL
+ * @prop {number} seasons - The number of seasons
+ * @prop {string} updated - The last updated date
+ * @prop {Array<number>} genres - The id's of the podcast's genres
+ */
+
+/**
  * @typedef {object} PodcastListProps
- * @prop {Array<object>} data - The list of podcasts
+ * @prop {Array<Podcast>} data - The list of podcasts
  */
 
 /**
