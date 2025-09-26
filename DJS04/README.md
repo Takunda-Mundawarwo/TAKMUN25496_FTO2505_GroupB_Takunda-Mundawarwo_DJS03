@@ -1,16 +1,16 @@
 # 🎧 Podcast App
 
-A landing page for a podcast discovery app created with React, using reusable components for the podcast previews, podcast list, and error/loading messages. Podcast data is fetched from an external API and podcast preview
+A landing page for a podcast discovery app created with React. This project offers an advanced browsing experience that allows users to dynamically search, sort, filter and paginate a list of podcast shows. It also provides an intuitive user interface that responds to user input in real time and maintains a consistent, seamless experience throughout navigation.
 
 ## 🚀 Features
 
-- **Landing Page of Podcasts:** Dynamically displays a collection of podcasts using React components.
+- **Search Functionality:** Implements a flexible search that matches any part of the podcast title & responds in real-time.
 
-- **Data Fetching:** Podcast data is dynamically fetched from an API on inital page load.
+- **Sorting Options:** Allows for sorting based on newest updates, alphabetical order or reverse alphabetical order.
 
-- **Loading, Error and Empty States:** A loading indicator is displayed while fetching data; An error message is displayed informing users if the fetch fails or returns no results.
+- **Filtering:** The ability to apply genre-based filtering through a select input.
 
-- **Responsive Design:** Responsive across desktop, tablet and mobile devices.
+- **Pagination:** The podcast list is shown in manageable chunks, using pagination.
 
 ## 🛠️ Technologies Used
 
@@ -25,24 +25,27 @@ A landing page for a podcast discovery app created with React, using reusable co
 1. Clone the repository:
 
 ```bash
- $ git clone https://github.com/Takunda-Mundawarwo/TAKMUN25496_FTO2505_GroupB_Takunda-Mundawarwo_DJS03.git
+ $ git clone https://github.com/Takunda-Mundawarwo/TAKMUN25496_FTO2505_GroupB_Takunda-Mundawarwo_DJS04.git
 ```
 
 2. Navigate to the directory:
 
 ```bash
-$ cd TAKMUN25496_FTO2505_GroupB_Takunda-Mundawarwo_DJS03
+$ cd TAKMUN25496_FTO2505_GroupB_Takunda-Mundawarwo_DJS04
+```
+
+3. Install Dependencies:
+
+Run the following command in the command-line to install dependencies:
+
+```bash
+npm install
 ```
 
 3. Start the server:
 
-The project can be launched most easily using a VS code extention such as "Live server" or "Live Preview"
-
-Alternatively you can launch it with Node.js:
-If you not have Node.js installed, you can do so following the [download instructions in the Node.js docs.](https://nodejs.org/en/download)
-
 Then start a local server with the command:
 
 ```bash
-npx http-server -o -p 9999
+npm run dev
 ```
